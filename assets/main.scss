@@ -1,0 +1,468 @@
+@import url('https://fonts.google.com/specimen/Josefin+Sans');
+
+body {
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    caret-color: hsl(220, 98%, 61%);
+
+    h1 {
+        color: whitesmoke;
+        font-weight: 700;
+        font-size: 35px;
+        letter-spacing: 1em;
+    }
+
+    div#__nuxt {
+        width: 100%;
+    }
+    
+
+    @if (dark-mode) {
+        background-color:  hsl(236, 33%, 92%);
+    }
+
+    @else {
+        background-color: hsl(235, 21%, 11%);
+    }
+}
+
+
+
+.dark-mode {
+    background-image: url("../images/bg-desktop-dark.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    flex-direction: column;
+
+    .title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }   
+
+    .change-mode__tolight{
+        display: block;
+    }
+
+    .change-mode__todark{
+        display: none;
+    }
+
+    .container {
+        margin: 0 auto;
+        margin-top: 4em;
+
+    }
+
+    .checker {
+        border: 1px solid hsl(234, 11%, 52%);
+        width: 2em;
+        height: 2em;
+        border-radius: 100%;
+        margin: 10px;
+    }
+
+    .create-new {
+        width: 35em;
+        background-color: #25273c;
+        // margin: 0 auto;
+        margin-bottom: 3em;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+
+        input {
+            border-radius: 10px;
+            width: 100%;
+            background-color: #25273c;
+            height: 4em;
+            border: none;
+            color: white;
+            font-size: 17px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    }
+
+    .tasks {
+        width: 35em;
+        background-color: #25273c;
+        border-radius: 10px 10px 0 0;
+
+        .checker_border {
+            width: 2em;
+            height: 2em;
+            border-radius: 100%;
+            margin: 0px 20px 0px 20px;
+            background: hsl(234, 11%, 52%);
+            position: relative;
+
+            .checker_in {
+                border: none;
+                width: 1.9em;
+                height: 1.9em;
+                border-radius: 100%;
+                margin: 10px;
+                background-color: #25273c;
+                top: -9px;
+                left: -9px;
+                position: absolute;
+            }
+        }
+
+        .checker_border:hover {
+            cursor: pointer;
+            background: linear-gradient(120deg, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+        }
+
+    }
+
+    .tasks:hover {
+        // cursor: pointer;
+
+        .delete {
+            .croix {
+                cursor: pointer;
+                display: block;
+            }
+        }
+
+    }
+
+    .content {
+        height: 4em;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid hsl(234, 11%, 52%);
+        // padding: 2px 2px 2px 10px; 
+
+        .text-content {
+            flex-basis: 80%;
+        }
+
+        .delete {
+            display: flex;
+            justify-content: flex-end;
+
+            .croix {
+                color: hsl(234, 11%, 52%);
+                font-size: 30px;
+                display: none;
+            }
+        }
+    }
+
+    .task-footer {
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #25273c;
+        padding: 0% 4% 0% 4%;
+
+
+        &__tools {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-basis: 35%;
+            font-weight: bold;
+
+            &All {
+                color: hsl(220, 98%, 61%);
+            }
+        }
+
+
+
+        #compt,
+        #Clear,
+        &__toolsActive,
+        &__toolsCompleted {
+            color: hsl(234deg, 11%, 52%);
+        }
+
+        #Clear:hover,
+        &__toolsActive:hover,
+        &__toolsCompleted:hover {
+            color: white;
+            cursor: pointer;
+        }
+
+
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    
+
+.is-complete {
+
+    .content {
+        height: 4em;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid hsl(234, 11%, 52%);
+    }
+
+    .checker {
+        border: 1px solid hsl(234, 11%, 52%);
+        width: 2em;
+        height: 2em;
+        border-radius: 100%;
+        margin: 10px;
+        background: linear-gradient(hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+    }
+
+    &-checker_border {
+        width: 2em;
+        height: 2em;
+        border-radius: 100%;
+        background: linear-gradient(120deg, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+        position: relative;
+        margin: 0px 20px 0px 20px;
+    }
+
+    &-checker_in {
+        display: none;
+    }
+
+    .text-content {
+        text-decoration: line-through;
+        color: hsl(234, 11%, 52%);
+        font-family: 'Josefin Sans', sans-serif;
+    }
+}
+
+}
+
+.light-mode {
+    background-image: url("../images/bg-desktop-light.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    background-color:  hsl(236, 33%, 92%);
+    justify-content: center;
+    color: hsl(235, 19%, 35%);
+    flex-direction: column;
+
+    .title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .change-mode__todark{
+        display: block;
+    }
+
+    .change-mode__tolight{
+        display: none;
+    }
+
+    .container {
+        margin: 0 auto;
+        margin-top: 4em;
+
+    }
+
+    .checker {
+        border: 1px solid hsl(234, 11%, 52%);
+        width: 2em;
+        height: 2em;
+        border-radius: 100%;
+        margin: 10px;
+    }
+
+    .create-new {
+        width: 35em;
+        background-color: hsl(0, 0%, 98%);
+        // margin: 0 auto;
+        margin-bottom: 3em;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+
+        input {
+            border-radius: 10px;
+            width: 100%;
+            background-color: hsl(0, 0%, 98%);
+            height: 4em;
+            border: none;
+            color:  hsl(235, 19%, 35%);
+            font-size: 17px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    }
+
+    .tasks {
+        width: 35em;
+        background-color: hsl(0, 0%, 98%);
+        border-radius: 10px 10px 0 0;
+
+        .checker_border {
+            width: 2em;
+            height: 2em;
+            border-radius: 100%;
+            margin: 0px 20px 0px 20px;
+            background: hsl(234, 11%, 52%);
+            position: relative;
+
+            .checker_in {
+                border: none;
+                width: 1.9em;
+                height: 1.9em;
+                border-radius: 100%;
+                margin: 10px;
+                background-color: hsl(0, 0%, 98%);
+                top: -9px;
+                left: -9px;
+                position: absolute;
+            }
+        }
+
+        .checker_border:hover {
+            cursor: pointer;
+            background: linear-gradient(120deg, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+        }
+
+    }
+
+    .tasks:hover {
+        // cursor: pointer;
+
+        .delete {
+            .croix {
+                cursor: pointer;
+                display: block;
+            }
+        }
+
+    }
+
+    .content {
+        height: 4em;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid hsl(234, 11%, 52%);
+        // padding: 2px 2px 2px 10px; 
+
+        .text-content {
+            flex-basis: 80%;
+        }
+
+        .delete {
+            display: flex;
+            justify-content: flex-end;
+
+            .croix {
+                color: hsl(234, 11%, 52%);
+                font-size: 30px;
+                display: none;
+            }
+        }
+    }
+
+    .task-footer {
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: hsl(0, 0%, 98%);
+        padding: 0% 4% 0% 4%;
+
+
+        &__tools {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-basis: 35%;
+            font-weight: bold;
+
+            &All {
+                color: hsl(220, 98%, 61%);
+            }
+        }
+
+
+
+        #compt,
+        #Clear,
+        &__toolsActive,
+        &__toolsCompleted {
+            color: hsl(236, 9%, 61%);
+        }
+
+        #Clear:hover,
+        &__toolsActive:hover,
+        &__toolsCompleted:hover {
+            color:  hsl(235, 19%, 35%);
+            cursor: pointer;
+        }
+
+
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    
+
+.is-complete {
+
+    .content {
+        height: 4em;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid hsl(234, 11%, 52%);
+    }
+
+    .checker {
+        border: 1px solid hsl(234, 11%, 52%);
+        width: 2em;
+        height: 2em;
+        border-radius: 100%;
+        margin: 10px;
+        background: linear-gradient(hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+    }
+
+    &-checker_border {
+        width: 2em;
+        height: 2em;
+        border-radius: 100%;
+        background: linear-gradient(120deg, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+        position: relative;
+        margin: 0px 20px 0px 20px;
+    }
+
+    &-checker_in {
+        display: none;
+    }
+
+    .text-content {
+        text-decoration: line-through;
+        color: hsl(233, 11%, 84%);
+        font-family: 'Josefin Sans', sans-serif;
+    }
+}
+
+}
+
+
+
+
+
+
+
