@@ -9,6 +9,7 @@ body {
     font-size: 17px;
     font-weight: 400;
     caret-color: hsl(220, 98%, 61%);
+    background-color: hsl(235, 21%, 11%);
 
     h1 {
         color: whitesmoke;
@@ -19,15 +20,6 @@ body {
 
     div#__nuxt {
         width: 100%;
-    }
-    
-
-    @if (dark-mode) {
-        background-color:  hsl(236, 33%, 92%);
-    }
-
-    @else {
-        background-color: hsl(235, 21%, 11%);
     }
 }
 
